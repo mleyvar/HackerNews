@@ -1,0 +1,146 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'androidx.navigation.safeargs.kotlin'
+apply plugin: 'kotlin-kapt'
+apply plugin: 'dagger.hilt.android.plugin'
+
+android {
+    compileSdkVersion 30
+    buildToolsVersion "30.0.3"
+
+    buildFeatures {
+        viewBinding = true
+    }
+
+    defaultConfig {
+        applicationId "com.mplr.hackernews"
+        minSdkVersion 23
+        targetSdkVersion 30
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+        debug {
+            applicationIdSuffix ".debug"
+            debuggable true
+        }
+    }
+
+    productFlavors {
+        dev {
+            applicationId "com.mplr.hackernews.dev"
+            minSdkVersion 24
+            targetSdkVersion 30
+            testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+            versionCode 1
+            versionName '1.0'
+        }
+        prod {
+            applicationId "com.mplr.hackernews.prod"
+            minSdkVersion 24
+            targetSdkVersion 30
+            testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+            versionCode 1
+            versionName '1.0'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+    flavorDimensions 'software'
+
+}
+
+kapt {
+    correctErrorTypes = true
+}
+
+dependencies {
+
+
+
+    // Support Libraries
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation "androidx.activity:activity-ktx:$activityVersion"
+    implementation "androidx.appcompat:appcompat:$appCompatVersion"
+    implementation "com.google.android.material:material:$materialVersion"
+    implementation "androidx.legacy:legacy-support-v4:$supportVersion"
+    implementation "androidx.cardview:cardview:$supportVersion"
+    implementation "androidx.recyclerview:recyclerview:$supportVersion"
+    implementation "androidx.palette:palette-ktx:$supportVersion"
+    implementation "androidx.dynamicanimation:dynamicanimation:$supportVersion"
+    implementation "androidx.core:core-ktx:$ktxVersion"
+    implementation "androidx.constraintlayout:constraintlayout:$constraintLayoutVersion"
+    implementation "androidx.fragment:fragment-ktx:$fragmentKtxVersion"
+
+    // Architecture components
+    implementation "androidx.lifecycle:lifecycle-extensions:$archVersion"
+    implementation "androidx.lifecycle:lifecycle-runtime-ktx:$archVersion"
+
+
+    // Dagger Hilt
+
+    implementation "com.google.dagger:hilt-android:$daggerHiltApp"
+    kapt "com.google.dagger:hilt-android-compiler:$daggerHiltApp"
+    implementation "androidx.hilt:hilt-lifecycle-viewmodel:$daggerHiltViewModelApp"
+    kapt "androidx.hilt:hilt-compiler:$daggerHiltViewModelApp"
+
+
+    // RxJava
+    implementation "io.reactivex.rxjava2:rxjava:$rxJavaVersion"
+    implementation "io.reactivex.rxjava2:rxandroid:$rxAndroidVersion"
+    implementation "com.jakewharton.rxrelay2:rxrelay:$rxrelay2"
+    implementation "io.reactivex.rxjava2:rxkotlin:$rxKotlin"
+
+    // Room
+    implementation "androidx.room:room-runtime:$roomVersion"
+    implementation "androidx.room:room-rxjava2:$roomVersion"
+    kapt "androidx.room:room-compiler:$roomVersion"
+    implementation "androidx.navigation:navigation-fragment-ktx:$navigationVersion"
+    implementation "androidx.navigation:navigation-ui-ktx:$navigationVersion"
+
+    // Feature module Support
+    implementation "androidx.navigation:navigation-dynamic-features-fragment:$navigationVersion"
+
+
+    // Jetpack Compose Integration
+    implementation "androidx.navigation:navigation-compose:1.0.0-alpha05"
+
+    // Network
+    implementation "com.squareup.retrofit2:retrofit:$retrofitVersion"
+    implementation "com.google.code.gson:gson:$gsonVersion"
+    implementation "com.squareup.retrofit2:converter-gson:$retrofitVersion"
+    implementation "com.jakewharton.retrofit:retrofit2-rxjava2-adapter:$rxJava2Adapter"
+  //  implementation 'com.squareup.okhttp3:logging-interceptor:3.9.0'
+
+    // Glide
+    implementation "com.github.bumptech.glide:glide:$glideVersion"
+
+    // Airbnb
+    implementation("com.airbnb.android:lottie:$airbnbLottieVersion") {
+        exclude group: 'com.android.support', module: 'appcompat-v7'
+        exclude group: 'com.android.support', module: 'design'
+        exclude module: 'support-v4'
+    }
+
+
+    // Testing
+    testImplementation "junit:junit:$jUnit"
+    androidTestImplementation "androidx.test.ext:junit:$jUnitExt"
+    androidTestImplementation "androidx.test.espresso:espresso-core:$expresso"
+    // Testing Navigation
+    androidTestImplementation "androidx.navigation:navigation-testing:$navigationVersion"
+}
