@@ -59,6 +59,7 @@ ext {
     retrofitVersion = "2.6.1"
     gsonVersion = "2.8.1"
     rxJava2Adapter = "1.0.0"
+    loginInterceptor = "3.9.0"
 
     // Image handling
     glideVersion = "4.11.0"
