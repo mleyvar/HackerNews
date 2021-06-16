@@ -124,7 +124,7 @@ dependencies {
     implementation "com.google.code.gson:gson:$gsonVersion"
     implementation "com.squareup.retrofit2:converter-gson:$retrofitVersion"
     implementation "com.jakewharton.retrofit:retrofit2-rxjava2-adapter:$rxJava2Adapter"
-  //  implementation 'com.squareup.okhttp3:logging-interceptor:3.9.0'
+    implementation "com.squareup.okhttp3:logging-interceptor:$loginInterceptor"
 
     // Glide
     implementation "com.github.bumptech.glide:glide:$glideVersion"
@@ -136,11 +136,24 @@ dependencies {
         exclude module: 'support-v4'
     }
 
+    //Swipe
+    implementation "com.daimajia.swipelayout:library:$swipelayout"
 
     // Testing
+
+
+
     testImplementation "junit:junit:$jUnit"
+    testImplementation "org.hamcrest:java-hamcrest:$hamcrestVersion"
+    testImplementation "org.assertj:assertj-core:$assertJVersion"
+    testImplementation "org.mockito:mockito-core:$mockitoVersion"
+    testImplementation "com.nhaarman.mockitokotlin2:mockito-kotlin:$mockitoKotlin2Version"
+    testImplementation "androidx.arch.core:core-testing:$testArchCoreVersion"
     androidTestImplementation "androidx.test.ext:junit:$jUnitExt"
     androidTestImplementation "androidx.test.espresso:espresso-core:$expresso"
+    testImplementation "org.jetbrains.kotlinx:kotlinx-coroutines-test:$coroutinesTestVersion"
+    androidTestImplementation "org.mockito:mockito-android:$mockitoVersion"
+
     // Testing Navigation
     androidTestImplementation "androidx.navigation:navigation-testing:$navigationVersion"
 }
