@@ -2,6 +2,8 @@
 
 Esta aplicación muestra las diferentes noticias.
 
+![image](https://user-images.githubusercontent.com/24800779/122154691-22eff980-ce2b-11eb-800e-28984ee59c38.png)
+
 El objetivo de esta aplicación es mostrar un ejemplo de una aplicaicón android con las siguientes características:
 
 1.- Desarrollada en Android con el ,lenguaje Kotlin </br>
@@ -14,7 +16,7 @@ El objetivo de esta aplicación es mostrar un ejemplo de una aplicaicón android
 8.- Inyección de dependencias con Dagger Hilt</br>
 9.- Persistencia con Room</br>
 10.- Pruebas unitarias del ViewModel</br>
-11.- Ejemplo de courutina para ejecutar un servicio de Room de la base de datos. El propósito es solod emostrativo y cumple con el obtener los datos desde otro hilo (IO) y no en el hilo principal. Aprovechando el scope del viewModel para el dispose del recurso.</br>
+11.- Ejemplo de coroutina para ejecutar un servicio de Room de la base de datos. El propósito es solod emostrativo y cumple con el obtener los datos desde otro hilo (IO) y no en el hilo principal. Aprovechando el scope del viewModel para el dispose del recurso.</br>
 
 
 
@@ -34,5 +36,10 @@ Este es un video demostrativo de la app.
 
 
 https://user-images.githubusercontent.com/24800779/122154266-35b5fe80-ce2a-11eb-9dec-7f923ab93482.mov
+
+
+Se presenta un ejempplo para las pruebas unitarias del ViewModel. Este ejemplo trata de demostrar como hacer los objetos Mock para pasarlos al caso de prueba, hace una verificación del caso considerando que el objeto que se compara es un LiveData del ViewModel y se agregan las reglas para RX.
+
+![image](https://user-images.githubusercontent.com/24800779/122154611-fdfb8680-ce2a-11eb-896c-406fb4fa1c83.png)
 
 
