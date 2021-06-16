@@ -4,17 +4,17 @@ Esta aplicación muestra las diferentes noticias.
 
 El objetivo de esta aplicación es mostrar un ejemplo de una aplicaicón android con las siguientes características:
 
-1.- Desarrollada en Android con el ,lenguaje Kotlin
-2.- ViewBinding para el enlazado de componentes de la vista
-3.- Patrón de diseño MVVM, Observer y ViewHolder
-4.- Se incorpora LiveData para comunicar la capa de viewModel con la vista.
-5.- Se crea| una capa para los logs y se deja lista para integración de crashalitycs
-6.- Consumo de servicios web de tipo REST con retrofit
-7.- Programación reactiva (RX) para obtener los datos del servicio REST
-8.- Inyección de dependencias con Dagger Hilt
-9.- Persistencia con Room
-10.- Pruebas unitarias del ViewModel
-11.- Ejemplo de courutina para ejecutar un servicio de Room de la base de datos. El propósito es solod emostrativo y cumple con el obtener los datos desde otro hilo (IO) y no en el hilo principal. Aprovechando el scope del viewModel para el dispose del recurso.
+1.- Desarrollada en Android con el ,lenguaje Kotlin </br>
+2.- ViewBinding para el enlazado de componentes de la vista</br>
+3.- Patrón de diseño MVVM, Observer y ViewHolder</br>
+4.- Se incorpora LiveData para comunicar la capa de viewModel con la vista.</br>
+5.- Se crea| una capa para los logs y se deja lista para integración de crashalitycs</br>
+6.- Consumo de servicios web de tipo REST con retrofit</br>
+7.- Programación reactiva (RX) para obtener los datos del servicio REST</br>
+8.- Inyección de dependencias con Dagger Hilt</br>
+9.- Persistencia con Room</br>
+10.- Pruebas unitarias del ViewModel</br>
+11.- Ejemplo de courutina para ejecutar un servicio de Room de la base de datos. El propósito es solod emostrativo y cumple con el obtener los datos desde otro hilo (IO) y no en el hilo principal. Aprovechando el scope del viewModel para el dispose del recurso.</br>
 
 
 
