@@ -1,5 +1,6 @@
 package com.mplr.hackernews.activities
 
+import android.animation.Animator
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
@@ -20,14 +21,27 @@ class SplashActivity : AppCompatActivity() {
     }
 
     private fun startLottieAnimation() {
-        binding.animationStartLottie.addAnimatorUpdateListener { valueAnimator ->
-            val progress = (valueAnimator.animatedValue as Float * 100).toInt()
 
-            if (progress >= 95) {
-                startActivity(Intent(this, MainActivity::class.java))
-                finish()
+        binding.animationStartLottie.addAnimatorListener(object : Animator.AnimatorListener {
+            override fun onAnimationStart(animation: Animator?) {
             }
-        }
+
+            override fun onAnimationEnd(animation: Animator?) {
+                startActivity()
+            }
+
+            override fun onAnimationCancel(animation: Animator?) {
+            }
+
+            override fun onAnimationRepeat(animation: Animator?) {
+            }
+        })
+
         binding.animationStartLottie.playAnimation()
+    }
+
+    fun startActivity() {
+        startActivity(Intent(this, MainActivity::class.java))
+        finish()
     }
 }

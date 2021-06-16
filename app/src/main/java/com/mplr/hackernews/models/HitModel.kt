@@ -4,12 +4,12 @@ import android.os.Parcelable
 import kotlinx.android.parcel.Parcelize
 
 @Parcelize
-class HitModel(
+open class HitModel(
     val objectId: String = "",
-    val title: String = "",
-    val author: String = "",
-    val storyUrl: String = "",
-    val url: String = "",
-    val storyTitle: String = "",
-    val commentText: String = ""
+    val title: String? = null,
+    val author: String?  = null,
+    val storyUrl: String? = null,
+    val url: String? = null,
+    val storyTitle: String? = null,
+    val commentText: String? = null
 ) : Parcelable {}

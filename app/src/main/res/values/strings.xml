@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Hacker News</string>
+    <string name="back">Back</string>
+    <string name="delete">Delete</string>
+    <string name="item_delete">The item was deleted success</string>
+
 </resources>
